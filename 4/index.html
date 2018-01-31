@@ -1,0 +1,119 @@
+<!-- 
+AUTHOR : BESIM HADŽIĆ
+PAGE: index.html
+DESCRIPTION: HTML FILE FOR INTERFACE USER ADMINISTRATION 
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Administration</title>
+<!-- REQUIRED STYLESHEETS START -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- REQUIRED STYLESHEETS START -->
+</head>
+<body>
+<!-- ADD USER MODAL START -->
+<div id="addUserModal" class="modal-box">
+	<div class="modal-box-overlay">
+	</div>
+	<div class="modal-box-container">
+		<form id="addUserForm" class="add-user-form">
+			<div class="col-12">
+				<h3><i class="fa fa-user-plus" aria-hidden="true"></i>Add New User</h3>
+			</div>
+			<div class="col-12">
+				<input type="text" id="fullname" class="form-input" placeholder="Full name....">
+			</div>
+			<div class="col-12">
+				<input type="text" id="username" class="form-input" placeholder="Username....">
+			</div>
+			<div class="col-12">
+				<input type="email" id="email" class="form-input" placeholder="Email....">
+			</div>
+			<div class="col-12">
+				<input type="text" id="password" class="form-input" placeholder="Password....">
+			</div>
+			<div class="col-12">
+				<button class="button button-primary" id="addUserButton"><i class="fa fa-user-plus" aria-hidden="true"></i>ADD USER</button>
+				<a class="button button-primary" id="addUserButtonClose"><i class="fa fa-times" aria-hidden="true"></i>CLOSE</a>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- ADD USER MODAL END -->
+<!-- EDIT USER MODAL START -->
+<div id="editUserModal" class="modal-box">
+	<div class="modal-box-overlay">
+	</div>
+	<div class="modal-box-container">
+		<form id="editUserForm" class="add-user-form">
+			<div class="col-12">
+				<h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit User</h3>
+			</div>
+			<div class="col-12">
+				<input type="text" id="editfullname" class="form-input" placeholder="Full name....">
+			</div>
+			<div class="col-12">
+				<input type="text" id="editusername" class="form-input" placeholder="Username....">
+			</div>
+			<div class="col-12">
+				<input type="email" id="editemail" class="form-input" placeholder="Email....">
+			</div>
+			<div class="col-12">
+				<input type="text" id="editpassword" class="form-input" placeholder="Password....">
+			</div>
+			<div class="col-12">
+				<button class="button button-primary" id="editUserButton"><i class="fa fa-pencil" aria-hidden="true"></i>EDIT USER</button>
+				<a class="button button-primary" id="editUserButtonClose"><i class="fa fa-times" aria-hidden="true"></i>CLOSE</a>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- EDIT USER MODAL END -->
+<!-- HEADER START -->
+<header class="header clearfix">
+<div class="container">
+	<h1 class="logo">User Administration</h1>
+	<button id="deleteAllUsers" class="button button-primary last"><i class="fa fa-times" aria-hidden="true"></i>DELETE ALL USERS</button>
+	<button id="addNewUser" class="button button-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>ADD NEW USER</button>
+	<form id="searchForm" class="searchform" action="">
+		<input id="searchInput" type="text" onkeyup="searchFunction()" class="form-control" placeholder="SEARCH USERS BY NAME....">
+	</form>
+</div>
+</header>
+<!-- HEADER END -->
+<div class="section clearfix">
+<div class="container">
+    <!-- USERS TABLE START -->
+	<ul class="user-list-head">
+		<li>
+		Full Name </li>
+		<li>
+		Username </li>
+		<li>
+		E-mail </li>
+		<li>
+		Password </li>
+		<li>
+		Edit User </li>
+		<li>
+		Delete User </li>
+	</ul>
+	<ul id="showUsers" class="user-lists">
+	</ul>
+	<!-- USERS TABLE END -->
+    <!-- PAGINATION START -->
+	<div id="paginationContainer" class="pagination">
+	</div>
+	 <!-- PAGINATION END -->
+</div>
+</div>
+<!-- REQUIRED JAVASCRIPT START -->
+<script src="js/scripts.js"></script>
+<!-- REQUIRED JAVASCRIPT END -->
+</body>
+</html>
